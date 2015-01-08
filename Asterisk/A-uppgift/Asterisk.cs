@@ -11,21 +11,25 @@ namespace rita_med_asterisk
     {
         private static void Main(string[] args)
         {
+
+
+            // For-loop för raderna
             for (int row = 0; row < 25; row++)
             {
 
+                // Min if-sats som säger att varannan rad ska ha ett mellanslag
                 if (row % 2 != 0)
                 {
                     Console.Write(" ");
                 }
 
-                for (int column = 0; column < 38; column++)
+                // For-loop för kolumnerna
+                for (int column = 0; column < 39; column++)
                 {
 
-
+                    // Switch-satsen som med hjälp av modulo berättar vilken färg de olika asteriskerna ska ha
                     switch (row % 3)
                     {
-
                         case 0:
                             Console.ForegroundColor = ConsoleColor.Yellow;
                             break;
@@ -35,22 +39,13 @@ namespace rita_med_asterisk
                         case 2:
                             Console.ForegroundColor = ConsoleColor.Green;
                             break;
-
-
-
                     }
-
                     Console.Write("* ");
 
                 }
-
-
-
                 Console.WriteLine();
                 Console.ResetColor();
-
             }
-
 
         }
 
