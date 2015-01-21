@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Net.Mime;
-using System.Net.Sockets;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography;
+
 
 namespace kassakvitto
 {
