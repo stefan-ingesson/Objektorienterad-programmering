@@ -18,8 +18,6 @@ namespace Kassakvitto___B
                 uint erhalletBelopp = 0;
                 int summa = 0;
 
-
-
                 totalSumma = LasPositiveDouble("Ange totalsumma: ");
 
                 //Här kommer min LasUInt metod. Med den skickar jag med två argument. Minimumvarde använder jag sedan för att se så att det erhållna beloppet är högre än vad den totala summan är
@@ -38,10 +36,6 @@ namespace Kassakvitto___B
 
                 // Beräkning för pengar tillbaka
                 uint pengarTillbaka = (uint)Math.Round(erhalletBelopp - attBetala);
-
-
-
-                
 
                 // Presentation
                 // KVITTO
@@ -93,14 +87,7 @@ namespace Kassakvitto___B
                     Console.WriteLine("FEL! {0} kan inte tolkas som en giltig summa pengar", ifylldSumma);
                     Console.ResetColor();
                 }
-
-
-
-
-
             }
-
-
         }
 
         // Metod för att läsa in det erhållna beloppet. Minimumvarde använder jag för att jämföra den totala summan efter avrundning med det erhållna beloppet.
@@ -130,7 +117,6 @@ namespace Kassakvitto___B
 
                 }
 
-
                 catch (Exception)
                 {
                     Console.BackgroundColor = ConsoleColor.Red;
@@ -141,8 +127,6 @@ namespace Kassakvitto___B
             }
 
         }
-
-
 
         private static void DelaUppIFaktorer(uint vaxelPengar)
         {
@@ -165,12 +149,6 @@ namespace Kassakvitto___B
                     Console.WriteLine("{0, -17}: {1}", pengarValorer[i] + valorDefinition[i], vaxelTillbaka);
                 }
             }
-
-
-
-
-
-
         }
     }
 }
