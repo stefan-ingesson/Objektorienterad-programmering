@@ -12,7 +12,7 @@ namespace lönerevision_2
         static void Main(string[] args)
         {
             int antalLöner;
-
+            // Min do-while loop som körs. Om antalet löner är mindre än 2 får de en ny chans att mata in värde. Är värdet 2 eller högre så körs metoden ProcessSalaries
             do
             {
                 antalLöner = ReadInt("Ange antal löner: ");
@@ -43,7 +43,7 @@ namespace lönerevision_2
             int[] löner = new int[antalLöner];
             
 
-
+            // Håller koll på antalet löner som matats in och som ska matas in
             for (int löneRäknare = 0; löneRäknare < löner.Length; löneRäknare++)
             {
                 löner[löneRäknare] = ReadInt("Ange lön nummer " + (löneRäknare + 1) + ": ");
@@ -56,7 +56,7 @@ namespace lönerevision_2
             int[] lönerSorterade = new int[antalLöner];
 
             Array.Copy(löner, lönerSorterade, antalLöner);
-            //Array.Copy(salariesValues, salariesValuesSorted, count);
+            
 
             Array.Sort(lönerSorterade);
 
