@@ -96,7 +96,7 @@ namespace lönerevision_2
             Console.WriteLine();
             Console.WriteLine();
         }
-
+            // Läser in
         static int ReadInt(string prompt)
         {
             string userInput = null;
