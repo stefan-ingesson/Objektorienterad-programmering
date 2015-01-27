@@ -11,13 +11,13 @@ namespace lönerevision_2
     {
         static void Main(string[] args)
         {
-            int antalLöner;
+            int antalLoner;
 
             do
             {
-                antalLöner = ReadInt("Ange antal löner: ");
+                antalLoner = ReadInt("Ange antal löner: ");
 
-                if (antalLöner < 2)
+                if (antalLoner < 2)
                 {
                     Console.BackgroundColor = ConsoleColor.Red;
                     Console.ResetColor();
@@ -26,7 +26,7 @@ namespace lönerevision_2
 
                 else
                 {
-                    ProcessSalaries(antalLöner);
+                    ProcessSalaries(antalLoner);
                 }
 
                 Console.BackgroundColor = ConsoleColor.DarkGreen;
@@ -38,59 +38,58 @@ namespace lönerevision_2
 
         }
 
-        private static void ProcessSalaries(int antalLöner)
+        private static void ProcessSalaries(int antalLoner)
         {
-            int[] löner = new int[antalLöner];
+            int[] loner = new int[antalLoner];
             
 
 
-            for (int löneRäknare = 0; löneRäknare < löner.Length; löneRäknare++)
+            for (int loneRaknare = 0; loneRaknare < loner.Length; loneRaknare++)
             {
-                löner[löneRäknare] = ReadInt("Ange lön nummer " + (löneRäknare + 1) + ": ");
+                loner[loneRaknare] = ReadInt("Ange lön nummer " + (loneRaknare + 1) + ": ");
             }
             Console.WriteLine();
 
 
             // Uträkning för medianlön
             Console.WriteLine("-----------------------------");
-            int[] lönerSorterade = new int[antalLöner];
+            int[] lonerSorterade = new int[antalLoner];
 
-            Array.Copy(löner, lönerSorterade, antalLöner);
-            //Array.Copy(salariesValues, salariesValuesSorted, count);
+            Array.Copy(loner, lonerSorterade, antalLoner);
 
-            Array.Sort(lönerSorterade);
+            Array.Sort(lonerSorterade);
 
-            int median;
-            if ((antalLöner % 2) == 0)
+            decimal median;
+            if ((antalLoner % 2) == 0)
             {
-                int medianvärde1 = lönerSorterade[(antalLöner / 2) - 1];
-                int medianvärde2 = lönerSorterade[(antalLöner / 2) - 1];
-                median = (medianvärde1 + medianvärde2) / 2;
+                int medianvarde1 = lonerSorterade[(antalLoner / 2) - 1];
+                int medianvarde2 = lonerSorterade[(antalLoner / 2)];
+                median = (medianvarde1 + medianvarde2) / 2.0m;
             }
 
             else
             {
-                median = lönerSorterade[(antalLöner / 2)];
+                median = lonerSorterade[(antalLoner / 2)];
             }
             Console.WriteLine();
 
             Console.WriteLine("Medianlön:\t {0:c0}", median);
-            Console.WriteLine("Medellön:\t {0:c0} ", löner.Average());
-            Console.WriteLine("Lönespridning:\t {0:c0} ", löner.Max() - löner.Min());
+            Console.WriteLine("Medellön:\t {0:c0} ", loner.Average());
+            Console.WriteLine("Lönespridning:\t {0:c0} ", loner.Max() - loner.Min());
             Console.WriteLine("-----------------------------");
 
             // For-loop för att skriva ut tre löner på varje rad
-            for (int i = 0; i < löner.Length; i++)
+            for (int i = 0; i < loner.Length; i++)
             {
                 if (i % 3 != 0)
                 {
-                    Console.Write("{0, 8}", löner[i]);
+                    Console.Write("{0, 8}", loner[i]);
                 }
 
                 else
                 {
                     Console.WriteLine();
-                    Console.Write("{0, 8}", löner[i]);
+                    Console.Write("{0, 8}", loner[i]);
                 }
             }
             Console.WriteLine();

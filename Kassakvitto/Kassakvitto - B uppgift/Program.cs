@@ -63,7 +63,7 @@ namespace Kassakvitto___B
         // Metod för att läsa in totala summan
         private static double LasPositiveDouble(string prompt)
         {
-            string ifylldSumma = "";
+            string varde = ""; // Den ifyllda summan
             double giltigSumma = 0;
 
             while (true)
@@ -71,10 +71,10 @@ namespace Kassakvitto___B
                 try
                 {
                     Console.Write("Ange totalsumma: ");
-                    ifylldSumma = Console.ReadLine();
-                    giltigSumma = double.Parse(ifylldSumma);
+                    varde = Console.ReadLine();
+                    giltigSumma = double.Parse(varde);
 
-                    if ((Math.Round(giltigSumma) < 1))
+                    if ((Math.Round(giltigSumma) <= 0))
                     {
                         throw new Exception();
                     }
@@ -84,7 +84,7 @@ namespace Kassakvitto___B
                 catch (Exception)
                 {
                     Console.BackgroundColor = ConsoleColor.Red;
-                    Console.WriteLine("FEL! {0} kan inte tolkas som en giltig summa pengar", ifylldSumma);
+                    Console.WriteLine("FEL! {0} kan inte tolkas som en giltig summa pengar", varde);
                     Console.ResetColor();
                 }
             }
@@ -93,7 +93,7 @@ namespace Kassakvitto___B
         // Metod för att läsa in det erhållna beloppet. Minimumvarde använder jag för att jämföra den totala summan efter avrundning med det erhållna beloppet.
         private static uint LasUInt(string prompt, uint minimumVarde)
         {
-            uint erhalletBelopp = 0;
+            uint erhalletBelopp = 0; 
             string inmatatBelopp = "";
 
             while (true)
