@@ -93,26 +93,26 @@ namespace Kassakvitto___B
         // Metod för att läsa in det erhållna beloppet. Minimumvarde använder jag för att jämföra den totala summan efter avrundning med det erhållna beloppet.
         private static uint LasUInt(string prompt, uint minimumVarde)
         {
-            uint erhalletBelopp = 0; 
-            string inmatatBelopp = "";
+            uint godkantBelopp = 0; 
+            string varde = "";
 
             while (true)
             {
                 try
                 {
                     Console.Write("Ange erhållet belopp: ");
-                    inmatatBelopp = Console.ReadLine();
-                    erhalletBelopp = uint.Parse(inmatatBelopp);
+                    varde = Console.ReadLine();
+                    godkantBelopp = uint.Parse(varde);
 
-                    if (minimumVarde > erhalletBelopp)
+                    if (godkantBelopp < minimumVarde)
                     {
                         Console.BackgroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Fel! {0:c0} är ett för litet belopp", erhalletBelopp);
+                        Console.WriteLine("Fel! {0:c0} är ett för litet belopp", godkantBelopp);
                         Console.ResetColor();
                     }
                     else
                     {
-                        return erhalletBelopp;
+                        return godkantBelopp;
                     }
 
                 }
@@ -120,7 +120,7 @@ namespace Kassakvitto___B
                 catch (Exception)
                 {
                     Console.BackgroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Fel! {0} kan inte tolkas som en summa pengar", inmatatBelopp);
+                    Console.WriteLine("Fel! {0} kan inte tolkas som en giltig summa pengar", varde);
                     Console.ResetColor();
                 }
 
