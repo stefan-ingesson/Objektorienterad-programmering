@@ -10,7 +10,7 @@ namespace Laboration4.A
 {
     public class SecretNumber
     {
-        // deklarera variabler
+        // Deklarering av variabler
         private int _count;
         private int _number;
         public const int MaxNumberOfGuesses = 7;
@@ -39,9 +39,9 @@ namespace Laboration4.A
             {
                 throw new ApplicationException();
             }
-            if (number < 1 || number > 100)
+            else if (number < 1 || number > 100)
             {
-                throw new ArgumentOutOfRangeException();
+                throw new ArgumentOutOfRangeException();            
             }
 
             _count++;
