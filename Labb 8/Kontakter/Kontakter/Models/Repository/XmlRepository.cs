@@ -32,7 +32,7 @@ namespace Kontakter.Models.Repository
            
             var contact = Document.Descendants("contact").Select(element => new Contact      // Måste vara exakt samma namn som min XML fil
             {
-                Id = Guid.Parse(element.Attribute("Id").Value),                          // Rött för att Id i Products.XML är satt som GUI... använd Parse!
+                Id = Guid.Parse(element.Attribute("Id").Value),                         
                 FirstName = element.Element("FirstName").Value,
                 LastName = element.Element("LastName").Value,
                 Email = element.Element("Email").Value,
@@ -74,9 +74,9 @@ namespace Kontakter.Models.Repository
         public Contact GetContact(Guid id)
         {
             var contact = Document.Descendants("contact").Where(element => Guid.Parse(element.Attribute("Id").Value) == id)
-                .Select(element => new Contact                                                // Måste vara exakt samma namn som min XML fil
+                .Select(element => new Contact                                                
             {
-                Id = Guid.Parse(element.Attribute("Id").Value),                          // Rött för att Id i Products.XML är satt som GUI... använd Parse!
+                Id = Guid.Parse(element.Attribute("Id").Value),                         
                 FirstName = element.Element("FirstName").Value,
                LastName = element.Element("LastName").Value,
                 Email = element.Element("Email").Value,
