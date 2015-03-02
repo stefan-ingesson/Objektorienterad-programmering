@@ -29,23 +29,6 @@ namespace Kontakter.Controllers
         public ActionResult Index()  // Index vy som visar kontakterna som ska synas på skärmen
         {
             return View(_repository.GetContact());
-            #region
-            //var path = Server.MapPath("~/App_Data/products.xml"); // Skapar sökväg till vår XML-fil
-            //var doc = XDocument.Load(path);                       // Läser upp filen i minnet
-            //var products = doc.Descendants("Product").Select(element => new Product // Måste vara exakt samma namn som min XML fil
-            //{
-            //    ProductId = Guid.Parse(element.Attribute("Id").Value),                          // Rött för att Id i Products.XML är satt som GUI... använd Parse!
-            //    Name = element.Element("Name").Value,
-            //    Description = element.Element("Description").Value,
-            //    Supplier = element.Element("Supplier").Value,
-            //    Price = Decimal.Parse(element.Element("Price").Value)              // Rött för att Price är satt som decimal i Products.XML... Använd Parse!
-            //})
-            //.OrderBy(x => x.Name).ToList();
-            #endregion
-
-            //return View(products);
-
-
         }
 
         //Get: Contact/Create
@@ -151,7 +134,7 @@ namespace Kontakter.Controllers
             catch (Exception)
             {
                 TempData["error"] = "Misslyckades ta bort kontakten";
-                RedirectToAction("Delete", new { id = id });                // Tomt objekt... måste stämma med namnet i variabeln contact
+                RedirectToAction("Delete", new { id = id });                
             }
             return RedirectToAction("Index");
         }
