@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Gissa_Hemliga_Talet.Controllers.HomeController" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABAAAAAAAAAAgAAAAAAAAAAEAAAAAAAI=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gissa_Hemliga_Talet.Models.SecretNumber">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAQAQAUkAAAQACAAABAAAECEAAhBAAAA=</HashCode>
+      <FileName>Models\SecretNumber.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Gissa_Hemliga_Talet.GuessedNumber">
+    <Position X="5.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\GuessedNumber.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="Gissa_Hemliga_Talet.Outcome">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAgAAAAAAAAgAAAAAAACAAgAAACA=</HashCode>
+      <FileName>Models\Outcome.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,52 @@
+﻿@model Kontakter.Models.Contact
+
+@{
+    ViewBag.Title = "Radera kontakt";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Ta bort kontakt</h2>
+
+<h3>Är du säker på att du vill ta bort kontakten?</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Jag är säker, ta bort kontakt!" class="btn btn-default" style="background-color:red; color: white; margin-left: 10%; margin-top: 5%; margin-bottom: 10%;" /><br /> <br />
+
+            <div>
+                @Html.ActionLink("Tillbaka till Startsidan", "Index", "Home", new { @class = "btn btn-info btn-xs" })
+            </div>
+        </div>
+    }
+</div>

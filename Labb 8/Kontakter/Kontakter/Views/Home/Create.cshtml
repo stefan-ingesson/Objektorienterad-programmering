@@ -1,0 +1,19 @@
+﻿@model Kontakter.Models.Contact
+
+
+
+@{
+    ViewBag.Title = "Skapa Kontakt";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Skapa kontakt</h2>
+
+@using (Html.BeginForm("Create", "Home", FormMethod.Post, new { @class = "form-horizontal" }))
+{
+    @Html.Partial("~/Views/Shared/_PartialView.cshtml")
+}
+
+  
+
+
+
